@@ -530,7 +530,15 @@ Be aware, however, that <tt>NULL != 'Spot'</tt> returns <tt>false</tt> due to SQ
 
       def child_association_map(association_id, reflection)
         Hash[*reflection.options[:from].map do |plural|
-          [plural, "#{association_id._singularize.to_s + "_" if reflection.options[:rename_individual_collections]}#{plural}".to_sym]
+          child_assoc = "#{plural}"
+          prefix = case reflection.options[:rename_individual_collections]
+          when Symbol
+            reflection.options[:rename_individual_collections]
+          when TrueClass
+            association_id._singularize.to_s
+          end
+          child_assoc = "#{prefix}_#{child_assoc}" if prefix
+          [plural, child_assoc.to_sym]
         end.flatten]
       end
 
