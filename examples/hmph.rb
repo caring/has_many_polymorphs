@@ -17,13 +17,13 @@ module Hmph::Models
 
   class Bird < Base
   end
-  
+
   class Kennel < Base
-    has_many_polymorphs :guests, 
+    has_many_polymorphs :guests,
       :from => [:dogs, :cats, :birds],
       :through => :guests_kennels,
-      :namespace => :"hmph/models/"      
-  end  
+      :namespace => :"hmph/models/"
+  end
 
   class InitialSchema < V 1.0
     def self.up

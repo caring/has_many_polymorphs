@@ -10,7 +10,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.column :created_at, :datetime, :null => false
     t.column :updated_at, :datetime, :null => false
   end
-  
+
   create_table :cats, :force => true do |t|
     t.column :name, :string
     t.column :cat_type, :string
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.column :created_at, :datetime, :null => false
     t.column :updated_at, :datetime, :null => false
   end
-  
+
   create_table :eaters_foodstuffs, :force => true do |t|
     t.column :foodstuff_id, :integer
     t.column :eater_id, :integer
@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(:version => 0) do
     t.column :created_at, :datetime, :null => false
     t.column :updated_at, :datetime, :null => false
   end
-  
+
   create_table :fish, :force => true do |t|
     t.column :name, :string
     t.column :speed, :integer
     t.column :created_at, :datetime, :null => false
     t.column :updated_at, :datetime, :null => false
   end
-  
+
   create_table :whales, :force => true do |t|
     t.column :name, :string
     t.column :created_at, :datetime, :null => false
@@ -67,16 +67,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.column :protector_type, :string
     t.column :created_at, :datetime, :null => false
     t.column :updated_at, :datetime, :null => false
-  end  
-  
+  end
+
   create_table :parentships, :force => true do |t|
     t.column :parent_id, :integer
     t.column :child_type, :string
-    t.column :kid_id, :integer 
+    t.column :kid_id, :integer
     t.column :created_at, :datetime, :null => false
     t.column :updated_at, :datetime, :null => false
-  end                    
-  
+  end
+
   create_table :people, :force => true do |t|
     t.column :name, :string
     t.column :age, :integer

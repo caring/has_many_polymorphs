@@ -9,11 +9,11 @@ module Rails #:nodoc:
     def has_many_polymorphs_options
       ::HasManyPolymorphs.options
     end
-    
+
     def has_many_polymorphs_options=(hash)
       ::HasManyPolymorphs.options = HashWithIndifferentAccess.new(hash)
     end
-    
-  end  
+
+  end
 end
 

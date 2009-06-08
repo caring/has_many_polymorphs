@@ -17,12 +17,12 @@ module SellersHelper
       display_address << seller.address.state.abbreviation if seller.address.state && seller.address.state.abbreviation
       display_address << seller.address.zip_postal_code if seller.address.zip_postal_code
     end
-    
+
     unless display_address.empty?
       "Location: " + display_address.join(", ")
     else
       "Location: unknown"
     end
   end
-  
+
 end

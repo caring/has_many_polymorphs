@@ -14,10 +14,10 @@ class String
 end
 
 class Symbol
-  
+
   # Changes an underscored symbol into a class reference.
   def _as_class; self.to_s._as_class; end
-  
+
   # Changes a plural symbol into a singular symbol.
   def _singularize; self.to_s.singularize.to_sym; end
 
@@ -35,7 +35,7 @@ class Array
     self.inject([]){|r, el| r + Array(el)}
   end
 
-  # Rails 1.2.3 compatibility method. Copied from http://dev.rubyonrails.org/browser/trunk/activesupport/lib/active_support/core_ext/array/extract_options.rb?rev=7217 
+  # Rails 1.2.3 compatibility method. Copied from http://dev.rubyonrails.org/browser/trunk/activesupport/lib/active_support/core_ext/array/extract_options.rb?rev=7217
   def _extract_options!
     last.is_a?(::Hash) ? pop : {}
   end
@@ -60,18 +60,18 @@ class Object
   def _logger_debug s
     s = "** has_many_polymorphs: #{s}"
     RAILS_DEFAULT_LOGGER.debug(s) if RAILS_DEFAULT_LOGGER
-  end  
+  end
 
-  # Logger shortcut.  
+  # Logger shortcut.
   def _logger_warn s
     s = "** has_many_polymorphs: #{s}"
     if RAILS_DEFAULT_LOGGER
-      RAILS_DEFAULT_LOGGER.warn(s) 
+      RAILS_DEFAULT_LOGGER.warn(s)
     else
       $stderr.puts(s)
-    end    
+    end
   end
-  
+
 end
 
 class ActiveRecord::Base
@@ -80,5 +80,5 @@ class ActiveRecord::Base
   def _base_class_name
     self.class.base_class.name.to_s
   end
-  
+
 end

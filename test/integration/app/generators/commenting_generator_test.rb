@@ -37,7 +37,7 @@ class CommentingGeneratorTest < Test::Unit::TestCase
     remove_require_for_commenting_extensions
   end
 
-  def generated_files    
+  def generated_files
     generated_files = [File.join(File.dirname(__FILE__), '..', '..', 'app', 'models', 'comment.rb')]
     generated_files << File.join(File.dirname(__FILE__), '..', '..', 'app', 'models', 'commenting.rb')
     generated_files << File.join(File.dirname(__FILE__), '..', '..', 'test', 'unit', 'commenting_test.rb')
@@ -65,7 +65,7 @@ class CommentingGeneratorTest < Test::Unit::TestCase
     run_migrate
   end
 
-  def remove_require_for_commenting_extensions  
+  def remove_require_for_commenting_extensions
     environment = File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment.rb')
     new_environment = ''
     if File.exists?(environment)
