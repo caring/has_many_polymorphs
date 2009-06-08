@@ -272,6 +272,7 @@ Be aware, however, that <tt>NULL != 'Spot'</tt> returns <tt>false</tt> due to SQ
           :select, # applies to the polymorphic relationship
           :conditions, # applies to the polymorphic relationship, the children, and the join
   #        :include,
+          :skip_parent_associations, # Don't define associations on the child classes.
           :parent_conditions,
           :parent_order,
           :order, # applies to the polymorphic relationship, the children, and the join
@@ -344,7 +345,7 @@ Be aware, however, that <tt>NULL != 'Spot'</tt> returns <tt>false</tt> due to SQ
           # set up the other related associations
           create_join_association(association_id, reflection)
           create_has_many_through_associations_for_parent_to_children(association_id, reflection)
-          create_has_many_through_associations_for_children_to_parent(association_id, reflection)
+          create_has_many_through_associations_for_children_to_parent(association_id, reflection) unless options[:skip_parent_associations]
         end
       end
 
