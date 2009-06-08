@@ -18,7 +18,7 @@ class ServerTest < ActiveSupport::TestCase
      end
      sleep(5)
   end
-  
+
   def teardown
     # Process.kill(9, @pid) doesn't work because Mongrel has double-forked itself away
     `ps awx | grep #{PORT} | grep -v grep | awk '{print $1}'`.split("\n").each do |pid|
@@ -28,16 +28,16 @@ class ServerTest < ActiveSupport::TestCase
     sleep(2)
     @pid = nil
   end
-  
+
   def test_association_reloading
     assert_match(/Bones: index/, open(URL + 'bones').read)
     assert_match(/Bones: index/, open(URL + 'bones').read)
     assert_match(/Bones: index/, open(URL + 'bones').read)
     assert_match(/Bones: index/, open(URL + 'bones').read)
   end
-  
+
   def test_verify_autoload_gets_invoked_in_console
     # XXX Probably can use script/runner to test this
   end
-  
+
 end

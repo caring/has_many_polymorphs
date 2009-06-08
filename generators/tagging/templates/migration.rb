@@ -16,7 +16,7 @@ class CreateTagsAndTaggings < ActiveRecord::Migration
       t.column :taggable_type, :string, :null => false
       # t.column :position, :integer # Uncomment this if you need to use <tt>acts_as_list</tt>.
     end
-    add_index :taggings, [:<%= parent_association_name -%>_id, :taggable_id, :taggable_type], :unique => true    
+    add_index :taggings, [:<%= parent_association_name -%>_id, :taggable_id, :taggable_type], :unique => true
   end
 
   # Remove the tables.

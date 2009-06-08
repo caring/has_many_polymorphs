@@ -9,6 +9,6 @@ Dir.chdir "#{File.dirname(__FILE__)}/integration/app/" do
   system "rake db:drop   --trace RAILS_GEM_VERSION=2.2.2 "
   system "rake db:create --trace RAILS_GEM_VERSION=2.2.2 "
   system "rake db:migrate --trace"
-  system "rake db:fixtures:load --trace"  
+  system "rake db:fixtures:load --trace"
 end
 

@@ -8,7 +8,7 @@
 indexer
 {
   # Indexer running options
-  mem_limit = 256M 
+  mem_limit = 256M
 }
 
 searchd
@@ -37,7 +37,7 @@ client
 source
 {
   # Individual SQL source options
-  sql_range_step = 20000   
+  sql_range_step = 20000
   strip_html = 0
   index_html_attrs =
   sql_query_post =

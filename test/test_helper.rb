@@ -17,7 +17,7 @@ Echoe.silence do
   # $LOAD_PATH << "#{HERE}/integration/app"
 end
 
-LOG = "#{HERE}/integration/app/log/development.log"     
+LOG = "#{HERE}/integration/app/log/development.log"
 
 ### For unit tests
 
