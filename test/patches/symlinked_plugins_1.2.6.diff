@@ -28,7 +28,7 @@ Index: /trunk/railties/lib/tasks/testing.rake
 -      t.pattern = 'vendor/plugins/**/test/**/*_test.rb'
 +      t.pattern = 'vendor/plugins/*/**/test/**/*_test.rb'
      end
- 
+
      t.verbose = true
    end
 -  Rake::Task['test:plugins'].comment = "Run the plugin tests in vendor/plugins/**/test (or specify with PLUGIN=name)"
@@ -42,5 +42,5 @@ Index: /trunk/railties/CHANGELOG
  *SVN*
 +
 +* Plugins may be symlinked in vendor/plugins.  #4245 [brandon, progrium@gmail.com]
- 
+
  * Resource generator depends on the model generator rather than duplicating it.  #7269 [bscofield]
