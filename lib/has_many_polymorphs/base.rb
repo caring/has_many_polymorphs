@@ -23,7 +23,7 @@ module ActiveRecord
           # check that the join actually joined to something
           unless (child_id = record["#{self.table_name}.#{reflection.options[:polymorphic_key]}"]) == record["#{klass.table_name}.#{klass.primary_key}"]
             raise ActiveRecord::Associations::PolymorphicError,
-              "Referential integrity violation; child <#{klass.name}:#{child_id}> was not found for #{reflection.name.inspect}"
+              "Referential integrity violation; child <#{klass.name}:#{child_id}> was not found for #{reflection.name.inspect}. Perhaps it was deleted?"
           end
 
           # eject the join keys
